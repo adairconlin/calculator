@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="calc.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container justify-content-center align-self-center" id="mainCalc">
+            <div class="container justify-content-center align-self-center mr-auto" id="screen">
+                <div class="row mr-auto" id="numberRow">
+                    <p class="display" id="firstnum"></p>
+                    <p class="display" id="symbol"></p>
+                    <p class="display" id="secondnum"></p>
+                </div>
+            </div>
+            <div class="container justify-content-center align-self-center" id="buttonpad">
+                <div class="row justify-content-center align-self-center">
+                    <button class="numBtn">7</button>
+                    <button class="numBtn">8</button>
+                    <button class="numBtn">9</button>
+                    <button class="arithBtn">-</button>
+                </div>
+                <div class="row justify-content-center align-self-center">
+                    <button class="numBtn">4</button>
+                    <button class="numBtn">5</button>
+                    <button class="numBtn">6</button>
+                    <button class="arithBtn">+</button>
+                </div>
+                <div class="row justify-content-center align-self-center">
+                    <button class="numBtn">1</button>
+                    <button class="numBtn">2</button>
+                    <button class="numBtn">3</button>
+                    <button class="arithBtn">*</button>
+                </div>
+                <div class="row justify-content-center align-self-center">
+                    <button class="clearBtn">c</button>
+                    <button class="numBtn">0</button>
+                    <button class="numBtn">.</button>
+                    <button class="arithBtn">÷</button>
+                </div>
+                <div class="row" id="equalRow">
+                    <button class="equalBtn ml-auto">=</button>
+                </div>
+            </div>
+        </div>
+        <script src="calc.js"></script>
+    </body>
+</html>
