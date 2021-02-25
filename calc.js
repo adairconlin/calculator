@@ -41,43 +41,41 @@ document.querySelectorAll(".arithBtn").forEach(function(arith) {
 document.querySelector(".equalBtn").addEventListener("click", function() {
     grandArray.push(numberStr);
     methodFunction();
-
     document.getElementById("firstnum").innerHTML = answer;
     document.getElementById("symbol").innerHTML = "";
     document.getElementById("secondnum").innerHTML = "";
-
     methodArray = [];
     grandArray = [];
     numberStr = answer;
 });
 
 function methodFunction() {
+    array = grandArray.map(Number);
     if(methodArray[0] == "+") {
-        additionFunction();
+        addFunction(array[0], array[1]);
     } else if(methodArray[0] == "-") {
-        subtractionFunction();
+        subFunction(array[0], array[1]);
     } else if(methodArray[0] == "*") {
-        multiFunction();
+        multiFunction(array[0], array[1]);
     } else if(methodArray[0] == "÷") {
-        divideFunction();
+        divideFunction(array[0], array[1]);
     }
 }
 
-
-function additionFunction() {
-    answer = parseFloat(grandArray[0]) + parseFloat(grandArray[1]);
+function addFunction(a, b) {
+    answer = a + b;
 }
 
-function subtractionFunction() {
-    answer = parseFloat(grandArray[0]) - parseFloat(grandArray[1]);
+function subFunction(a, b) {
+    answer = a - b;
 }
 
-function multiFunction() {
-    answer = parseFloat(grandArray[0]) * parseFloat(grandArray[1]);
+function multiFunction(a, b) {
+    answer = a * b;
 }
 
-function divideFunction() {
-    answer = parseFloat(grandArray[0]) / parseFloat(grandArray[1]);
+function divideFunction(a, b) {
+    answer = a / b;
 }
 
 //clear button
@@ -86,8 +84,8 @@ document.querySelectorAll(".clearBtn").forEach(function(arith) {
         numberStr = "";
         grandArray = [];
         methodArray = [];
+        document.getElementById("firstnum").innerHTML = 0;
         document.getElementById("symbol").innerHTML = "";
-        document.getElementById("firstnum").innerHTML = "";
         document.getElementById("secondnum").innerHTML = "";
     })
 });
