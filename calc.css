@@ -4,6 +4,7 @@
     padding-bottom: 1.5vw;
     width: 30vw;
     border: 1px solid grey;
+    background-color: white;
 }
 
 #screen {
@@ -40,11 +41,12 @@ button {
     font-size: 1.5vw !important;
     text-align: center;
     margin: .6vw !important;
-    transition: .5s ease;
+    transition: .4s ease;
 }
 
 button:hover {
-    background-color: lightgrey;
+    background-color: lightpink;
+    color: white;
 }
 
 button:focus {
