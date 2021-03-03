@@ -40,7 +40,23 @@ document.querySelectorAll(".arithBtn").forEach(function(arith) {
 //equal button
 document.querySelector(".equalBtn").addEventListener("click", function() {
     grandArray.push(numberStr);
-    methodFunction();
+    const calculator = (() => {
+        arr = grandArray.map(Number);
+        if(methodArray[0] == "+") {
+            const add = (a, b) => a + b;
+            answer = add(arr[0], arr[1]);
+        } else if(methodArray[0] == "-") {
+            const sub = (a, b) => a - b;
+            answer = sub(arr[0], arr[1]);
+        } else if(methodArray[0] == "*") {
+            const mul = (a, b) => a * b;
+            answer = mul(arr[0], arr[1]);
+        } else if(methodArray[0] == "÷") {
+            const div = (a, b) => a / b;
+            answer = div(arr[0], arr[1]);
+        }
+    })();
+
     document.getElementById("firstnum").innerHTML = answer;
     document.getElementById("symbol").innerHTML = "";
     document.getElementById("secondnum").innerHTML = "";
@@ -48,35 +64,6 @@ document.querySelector(".equalBtn").addEventListener("click", function() {
     grandArray = [];
     numberStr = answer;
 });
-
-function methodFunction() {
-    array = grandArray.map(Number);
-    if(methodArray[0] == "+") {
-        addFunction(array[0], array[1]);
-    } else if(methodArray[0] == "-") {
-        subFunction(array[0], array[1]);
-    } else if(methodArray[0] == "*") {
-        multiFunction(array[0], array[1]);
-    } else if(methodArray[0] == "÷") {
-        divideFunction(array[0], array[1]);
-    }
-}
-
-function addFunction(a, b) {
-    answer = a + b;
-}
-
-function subFunction(a, b) {
-    answer = a - b;
-}
-
-function multiFunction(a, b) {
-    answer = a * b;
-}
-
-function divideFunction(a, b) {
-    answer = a / b;
-}
 
 //clear button
 document.querySelectorAll(".clearBtn").forEach(function(arith) {
